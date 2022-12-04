@@ -1,5 +1,5 @@
 ! -----------------------------------------------------------------------------
-*.font: xft:Hack Nerd Font:size=12
+URxvt.font: xft:Hack Nerd Font Mono:size=12
 ! -----------------------------------------------------------------------------
 
 ##############
@@ -11,11 +11,12 @@ Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
+Xft.autohint:               true
 
 #################################
 # Color settings (Gruvbox)
 
-*background: #1c1c1c
+*background: #1d2021
 *foreground: #ebdbb2
 *cursorColor: #d5c4a1
 *pointerColorBackground: #586e75
