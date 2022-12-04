@@ -1,0 +1,6 @@
+build vim from source:
+https://vim.fandom.com/wiki/Building_Vim
+
+install fish and fisher, install tide with the fisher and run tide configure
+
+install rxvt terminal
