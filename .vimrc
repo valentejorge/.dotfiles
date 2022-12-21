@@ -12,6 +12,7 @@ Plugin 'jiangmiao/auto-pairs' "autopair to () and more
 Plugin 'preservim/nerdtree' "NerdTree
 Plugin 'ryanoasis/vim-devicons' "Icons for NerdTree
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' "read the name
+Plugin 'vim-scripts/vimspell' "spellchecker 
 
 " Plugins ↑ 
 
@@ -101,3 +102,5 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=28
 
+
+let spell_auto_type="tex,md,txt"
