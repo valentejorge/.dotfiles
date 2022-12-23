@@ -13,6 +13,7 @@ Plugin 'preservim/nerdtree' "NerdTree
 Plugin 'ryanoasis/vim-devicons' "Icons for NerdTree
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' "read the name
 Plugin 'vim-scripts/vimspell' "spellchecker 
+Plugin 'sangdol/mintabline.vim' "tabline top mano
 
 " Plugins ↑ 
 
