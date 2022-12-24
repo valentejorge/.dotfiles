@@ -16,7 +16,7 @@ Xft.autohint:               true
 #################################
 # Color settings (Gruvbox)
 
-*background: #1d2021
+*background: #1c1c1c
 *foreground: #ebdbb2
 *cursorColor: #d5c4a1
 *pointerColorBackground: #586e75

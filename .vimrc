@@ -105,3 +105,5 @@ let g:NERDTreeWinSize=28
 
 
 let spell_auto_type="tex,md,txt"
+
+let g:ycm_enable_semantic_highlight=1
