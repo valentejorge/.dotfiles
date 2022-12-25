@@ -67,7 +67,7 @@ URxvt*saveLines: 12000
 URxvt*scrollBar: false
 
 # autoexplicate
-URxvt.cursorBlink: true
+#URxvt.cursorBlink: true
 
 # sync copy
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
@@ -79,3 +79,6 @@ URxvt.iso14755_52: false
 
 # deactivate blinking cursor
 URxvt.cursorBlink: false
+
+#size of pane
+URxvt.geometry: 100x26
