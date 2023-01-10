@@ -38,6 +38,7 @@ set smartcase "i dont know but deve ser de marcar
 set noswapfile "no swap
 set nobackup
 set incsearch "realtime searching
+set so=7 "sets 7 lines up/down of cursor when moving vertically
 
 set clipboard=unnamedplus "vim yank to clipboard
 
@@ -60,7 +61,7 @@ hi CursorLineNR ctermbg=NONE
 set guifont=*
 
 "autopair↓
-let g:AutoPairsFlyMode = 1
+let g:AutoPairsFlyMode = 0
 "autopair
 
 " whitespace
