@@ -15,6 +15,7 @@ Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' "read the name
 Plugin 'vim-scripts/vimspell' "spellchecker 
 Plugin 'sangdol/mintabline.vim' "tabline top mano
 Plugin 'KarimElghamry/vim-auto-comment' "autocoment ctrl / and ctrl shift a
+Plugin 'frazrepo/vim-rainbow' "rainbow parentesis
 
 
 " Plugins ↑ 
@@ -90,14 +91,11 @@ vnoremap J :m '>+1<Cr>gv=gv
 vnoremap K :m '>-2<Cr>gv=gv
 "move text lines
 
-
-
 "keybinds
 
 
 
 "NerdTree
-
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
@@ -105,8 +103,24 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=28
+"NerdTree
 
 
 let spell_auto_type="tex,md,txt"
 
+"youcompleteme
 let g:ycm_enable_semantic_highlight=1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+"youcompleteme
+
+"rainbow parentesis
+let g:rainbow_active = 0
+
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+"rainbow parentesis
