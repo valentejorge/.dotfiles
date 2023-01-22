@@ -115,7 +115,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 "youcompleteme
 
 "rainbow parentesis
-let g:rainbow_active = 0
+let g:rainbow_active = 1
 
 let g:rainbow_load_separately = [
     \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
@@ -123,4 +123,8 @@ let g:rainbow_load_separately = [
     \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
     \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
     \ ]
+
+let g:rainbow_guifgs = ['brown', 'white', 'yellow', 'red', 'magenta']
+let g:rainbow_ctermfgs = ['green', 'white', 'yellow', 'cyan', 'magenta']
+
 "rainbow parentesis
