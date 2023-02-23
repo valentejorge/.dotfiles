@@ -16,7 +16,7 @@ Plugin 'vim-scripts/vimspell' "spellchecker
 Plugin 'sangdol/mintabline.vim' "tabline top mano
 Plugin 'KarimElghamry/vim-auto-comment' "autocoment ctrl / and ctrl shift a
 Plugin 'frazrepo/vim-rainbow' "rainbow parentesis
-
+Plugin 'preservim/tagbar' "tagbar with F8
 
 " Plugins ↑ 
 
@@ -96,7 +96,10 @@ vnoremap K :m '>-2<Cr>gv=gv
 
 
 "NerdTree
+nnoremap ν :NERDTreeToggle<CR>
+nnoremap Ν :NERDTreeToggleVCS<CR>
 map <C-n> :NERDTreeToggle<CR>
+map <C-n>n :NERDTreeToggleVCS<CR>
 let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 let NERDTreeShowLineNumbers=1
@@ -105,6 +108,7 @@ let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=28
 "NerdTree
 
+nmap <F8> :TagbarToggle<CR>
 
 let spell_auto_type="tex,md,txt"
 
