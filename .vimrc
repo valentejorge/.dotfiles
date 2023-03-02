@@ -43,6 +43,8 @@ set so=7 "sets 7 lines up/down of cursor when moving vertically
 
 set clipboard=unnamedplus "vim yank to clipboard
 
+set belloff=all "set the terrible bell sound off OMG thank you god
+
 "gray line at 80char 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
