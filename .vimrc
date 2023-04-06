@@ -154,12 +154,6 @@ let g:rainbow_guifgs = ['brown', 'white', 'yellow', 'red', 'magenta']
 let g:rainbow_ctermfgs = ['green', 'white', 'yellow', 'cyan', 'magenta']
 "rainbow parentesis
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_theme='minimalist'
-let g:airline_powerline_fonts = 1
 
 " augroup HITABFILL
 "     autocmd!
@@ -169,21 +163,30 @@ let g:airline_powerline_fonts = 1
 
 
 function! AirlineConfig()
-  let g:airline_powerline_fonts = 1
-  let g:airline_skip_empty_sections = 1
-  let g:airline#extensions#default#layout = [['z', 'b', 'c'], ['x', 'y', 'a', 'error', 'warning']]
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
 
-  function! TransparentSectionC()
-    highlight! airline_c ctermbg=NONE guibg=NONE
-    highlight! airline_c_bold ctermbg=NONE guibg=NONE
-    highlight! airline_z_to_airline_c ctermbg=NONE guibg=NONE
-    highlight! airline_b_to_airline_c ctermbg=NONE guibg=NONE
-    highlight! airline_c_to_airline_x ctermbg=NONE guibg=NONE
-    highlight airline_tabfill ctermbg=NONE guibg=NONE
-  endfunction
+    let g:airline#extensions#tabline#formatter = 'unique_tail'
+    let g:airline_theme='minimalist'
+    let g:airline_powerline_fonts = 1
 
-  autocmd! User AirlineAfterTheme call TransparentSectionC()
-  autocmd! User AirlineModeChanged call TransparentSectionC()
+"    let g:airline#extensions#default#layout = [
+"        \ ['a', 'b', 'c'], 
+"        \ ['x', 'y', 'z', 'error', 'warning']
+"        \ ]
+
+    function! TransparentSectionC()
+        highlight! airline_c ctermbg=NONE guibg=NONE
+        highlight! airline_c_bold ctermbg=NONE guibg=NONE
+        highlight! airline_z_to_airline_c ctermbg=NONE guibg=NONE
+        highlight! airline_b_to_airline_c ctermbg=NONE guibg=NONE
+        highlight! airline_c_to_airline_x ctermbg=NONE guibg=NONE
+        highlight airline_tabfill ctermbg=NONE guibg=NONE
+    endfunction
+
+    autocmd! User AirlineAfterTheme call TransparentSectionC()
+    autocmd! User AirlineModeChanged call TransparentSectionC()
 endfunction
 
 call AirlineConfig()
