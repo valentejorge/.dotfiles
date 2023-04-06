@@ -7,19 +7,25 @@ call vundle#begin()
 "Plugins ↓ 
 Plugin 'gmarik/Vundle.vim' " required
 Plugin 'lifepillar/vim-gruvbox8' "colorscheme
+"Plugin 'morhetz/gruvbox' aaa
 Plugin 'Valloric/YouCompleteMe.git' "autocomplete
 Plugin 'jiangmiao/auto-pairs' "autopair to () and more
 Plugin 'preservim/nerdtree' "NerdTree
 Plugin 'ryanoasis/vim-devicons' "Icons for NerdTree
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight' "read the name
-Plugin 'vim-scripts/vimspell' "spellchecker 
 Plugin 'sangdol/mintabline.vim' "tabline top mano
 Plugin 'KarimElghamry/vim-auto-comment' "autocoment ctrl / and ctrl shift a
 Plugin 'frazrepo/vim-rainbow' "rainbow parentesis
-Plugin 'scrooloose/syntastic' "syntaxhighlight
+Plugin 'vim-syntastic/syntastic' "syntaxhighlight
 Plugin 'nvie/vim-flake8' "pep8 for python
 Plugin 'vim-airline/vim-airline' "statusbar
 Plugin 'vim-airline/vim-airline-themes' "theme for statusbar
+Plugin 'tpope/vim-surround' "change surround
+Plugin 'mattn/emmet-vim' "emmet for web
+Plugin 'alvan/vim-closetag' "autoclose htmltag
+"Plugin 'smlombardi/gruvbox-syntax'
+Plugin 'othree/html5.vim' 
+
 
 " Plugin 'preservim/tagbar' tagbar with F8
 " Plugin 'ludovicchabant/vim-gutentags' easy vim tags
@@ -190,3 +196,12 @@ function! AirlineConfig()
 endfunction
 
 call AirlineConfig()
+
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+
+"au BufRead,BufNewFile *.html set filetype=html | syntax on
+"au BufRead,BufNewFile *.html set filetype=xml
+au BufRead,BufNewFile *.html set filetype=html | syntax on | hi htmlArg ctermfg=red | hi Title ctermfg=white | hi htmlString ctermfg=yellow cterm=italic | hi htmlTagName ctermfg=darkcyan | hi htmlTag ctermfg=darkcyan | hi htmlEndTag ctermfg=darkcyan | hi htmlLink ctermfg=blue
