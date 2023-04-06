@@ -4,7 +4,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugins ↓
+"Plugins ↓ 
 Plugin 'gmarik/Vundle.vim' " required
 Plugin 'lifepillar/vim-gruvbox8' "colorscheme
 Plugin 'Valloric/YouCompleteMe.git' "autocomplete
@@ -16,7 +16,13 @@ Plugin 'vim-scripts/vimspell' "spellchecker
 Plugin 'sangdol/mintabline.vim' "tabline top mano
 Plugin 'KarimElghamry/vim-auto-comment' "autocoment ctrl / and ctrl shift a
 Plugin 'frazrepo/vim-rainbow' "rainbow parentesis
-Plugin 'preservim/tagbar' "tagbar with F8
+Plugin 'scrooloose/syntastic' "syntaxhighlight
+Plugin 'nvie/vim-flake8' "pep8 for python
+Plugin 'vim-airline/vim-airline' "statusbar
+Plugin 'vim-airline/vim-airline-themes' "theme for statusbar
+
+" Plugin 'preservim/tagbar' tagbar with F8
+" Plugin 'ludovicchabant/vim-gutentags' easy vim tags
 
 " Plugins ↑ 
 
@@ -27,6 +33,7 @@ filetype plugin indent on    " required
 
 " uiuiui
 syntax on "turn on the syntaxhighlight
+set t_Co=256
 set backspace=indent,eol,start
 set encoding=UTF-8
 set tabstop=4 softtabstop=4 "one tab = four spaces
@@ -96,7 +103,6 @@ vnoremap K :m '>-2<Cr>gv=gv
 "keybinds
 
 
-
 "NerdTree
 nnoremap ν :NERDTreeToggle<CR>
 nnoremap Ν :NERDTreeToggleVCS<CR>
@@ -110,15 +116,29 @@ let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=28
 "NerdTree
 
-nmap <F8> :TagbarToggle<CR>
 
-let spell_auto_type="tex,md,txt"
+"nmap <F8> :TagbarToggle<CR>
+
+
+"let spell_auto_type="tex,md,txt"
+
 
 "youcompleteme
 let g:ycm_enable_semantic_highlight=1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 "youcompleteme
+
+"syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"syntastic
 
 "rainbow parentesis
 let g:rainbow_active = 1
@@ -132,5 +152,38 @@ let g:rainbow_load_separately = [
 
 let g:rainbow_guifgs = ['brown', 'white', 'yellow', 'red', 'magenta']
 let g:rainbow_ctermfgs = ['green', 'white', 'yellow', 'cyan', 'magenta']
-
 "rainbow parentesis
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline_theme='minimalist'
+let g:airline_powerline_fonts = 1
+
+" augroup HITABFILL
+"     autocmd!
+"     autocmd User AirlineAfterInit hi airline_tabfill ctermbg=NONE guibg=NONE
+"     autocmd User AirlineAfterInit hi airline_c  ctermbg=NONE guibg=NONE
+" augroup END
+
+
+function! AirlineConfig()
+  let g:airline_powerline_fonts = 1
+  let g:airline_skip_empty_sections = 1
+  let g:airline#extensions#default#layout = [['z', 'b', 'c'], ['x', 'y', 'a', 'error', 'warning']]
+
+  function! TransparentSectionC()
+    highlight! airline_c ctermbg=NONE guibg=NONE
+    highlight! airline_c_bold ctermbg=NONE guibg=NONE
+    highlight! airline_z_to_airline_c ctermbg=NONE guibg=NONE
+    highlight! airline_b_to_airline_c ctermbg=NONE guibg=NONE
+    highlight! airline_c_to_airline_x ctermbg=NONE guibg=NONE
+    highlight airline_tabfill ctermbg=NONE guibg=NONE
+  endfunction
+
+  autocmd! User AirlineAfterTheme call TransparentSectionC()
+  autocmd! User AirlineModeChanged call TransparentSectionC()
+endfunction
+
+call AirlineConfig()
