@@ -23,8 +23,11 @@ Plugin 'vim-airline/vim-airline-themes' "theme for statusbar
 Plugin 'tpope/vim-surround' "change surround
 Plugin 'mattn/emmet-vim' "emmet for web
 Plugin 'alvan/vim-closetag' "autoclose htmltag
+Plugin 'Yggdroot/indentLine'
+Plugin 'turbio/bracey.vim' "liveserver
 "Plugin 'smlombardi/gruvbox-syntax'
-Plugin 'othree/html5.vim' 
+
+"Plugin 'othree/html5.vim' 
 
 
 " Plugin 'preservim/tagbar' tagbar with F8
@@ -204,4 +207,4 @@ autocmd FileType html,css EmmetInstall
 
 "au BufRead,BufNewFile *.html set filetype=html | syntax on
 "au BufRead,BufNewFile *.html set filetype=xml
-au BufRead,BufNewFile *.html set filetype=html | syntax on | hi htmlArg ctermfg=red | hi Title ctermfg=white | hi htmlString ctermfg=yellow cterm=italic | hi htmlTagName ctermfg=darkcyan | hi htmlTag ctermfg=darkcyan | hi htmlEndTag ctermfg=darkcyan | hi htmlLink ctermfg=blue
+au BufRead,BufNewFile *.html set filetype=html | syntax on | hi htmlArg ctermfg=red | hi Title ctermfg=white | hi htmlString ctermfg=yellow cterm=italic | hi htmlTagName ctermfg=darkcyan | hi htmlTag ctermfg=darkcyan | hi htmlEndTag ctermfg=darkcyan | hi htmlLink ctermfg=blue | hi CursorLineNR ctermbg=NONE | hi clear CursorLine |  AirlineRefresh | call AirlineConfig()
