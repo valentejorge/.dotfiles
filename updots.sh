@@ -18,5 +18,7 @@ ln -sf ~/.dotfiles/.vimrc ~/.vimrc
 #link .Xdefaults
 ln -sf ~/.dotfiles/.Xdefaults ~/.Xdefaults
 
-echo "oki"
+#link .alacritty.yml
+ln -sf ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
 
+echo "oki"
