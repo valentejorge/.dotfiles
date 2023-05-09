@@ -21,4 +21,7 @@ ln -sf ~/.dotfiles/.Xdefaults ~/.Xdefaults
 #link .alacritty.yml
 ln -sf ~/.dotfiles/.alacritty.yml ~/.alacritty.yml
 
+#link nvim
+ln -sf ~/.dotfiles/nvim ~/.config/
+
 echo "oki"
