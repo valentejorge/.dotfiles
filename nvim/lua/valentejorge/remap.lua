@@ -11,3 +11,4 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>;", "A;<Esc>")
 vim.keymap.set("n", "<leader>:", "A:<Esc>")
+vim.keymap.set("n", "<leader>,", "A,<Esc>")
