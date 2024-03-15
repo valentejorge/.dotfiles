@@ -64,4 +64,13 @@ use {
     "lukas-reineke/indent-blankline.nvim"
 }
 
+-- LiveServer
+use {
+    "barrett-ruth/live-server.nvim",
+    build = 'pnpm add -g live-server',
+    cmd = { 'LiveServerStart', 'LiveServerStop' },
+
+    config = function() require('live-server').setup() end
+}
+
 end)
